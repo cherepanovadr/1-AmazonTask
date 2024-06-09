@@ -49,6 +49,7 @@ public class AmazonTest {
             if (price != null && inStock != null && discount == null) {
                 WebElement addToCartButton = product.findElement(By.cssSelector(".s-add-to-cart-button"));
                 addToCartButton.click();
+
             }
         }
 
