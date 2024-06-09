@@ -10,10 +10,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-public class AmazonTest {
+class AmazonTest {
 
     WebDriver driver;
 
@@ -52,12 +53,11 @@ public class AmazonTest {
 
             }
         }
-
         // Step 4: Go to the cart and check if the products are correct
         driver.get("https://www.amazon.com/gp/cart/view.html?ref_=nav_cart");
         List<WebElement> cartItems = driver.findElements(By.cssSelector(".sc-list-item-content"));
 
-        assertTrue(cartItems.size() > 0); // Check if there are items in the cart
+        assertFalse(cartItems.isEmpty()); // Check if there are items in the cart
         // Further assertions can be added to verify the correct products
     }
 
